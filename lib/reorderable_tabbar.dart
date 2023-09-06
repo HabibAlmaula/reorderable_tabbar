@@ -535,7 +535,7 @@ class ReorderableTabBar extends StatefulWidget implements PreferredSizeWidget {
 }
 
 class ReorderableTabBarState extends State<ReorderableTabBar> {
-  ScrollController? _scrollController;
+  ScrollController? scrollController;
   TabController? _controller;
   _IndicatorPainter? _indicatorPainter;
   ScrollController? _reorderController;
@@ -555,7 +555,7 @@ class ReorderableTabBarState extends State<ReorderableTabBar> {
     super.initState();
     _controllers = LinkedScrollControllerGroup();
     _reorderController = _controllers.addAndGet();
-    _scrollController = _controllers.addAndGet();
+    scrollController = _controllers.addAndGet();
     _tabKeys = widget.tabs.map((Widget tab) => GlobalKey()).toList();
     _tabExtendKeys = widget.tabs.map((Widget tab) => GlobalKey()).toList();
   }
@@ -1091,7 +1091,7 @@ class ReorderableTabBarState extends State<ReorderableTabBar> {
       height: widget.indicatorWeight,
       child: SingleChildScrollView(
         physics: widget.physics,
-        controller: _scrollController,
+        controller: scrollController,
         scrollDirection: Axis.horizontal,
         child: CustomPaint(
           painter: _indicatorPainter,
