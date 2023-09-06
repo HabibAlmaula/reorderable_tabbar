@@ -531,10 +531,10 @@ class ReorderableTabBar extends StatefulWidget implements PreferredSizeWidget {
   }
 
   @override
-  State<ReorderableTabBar> createState() => _ReorderableTabBarState();
+  State<ReorderableTabBar> createState() => ReorderableTabBarState();
 }
 
-class _ReorderableTabBarState extends State<ReorderableTabBar> {
+class ReorderableTabBarState extends State<ReorderableTabBar> {
   ScrollController? _scrollController;
   TabController? _controller;
   _IndicatorPainter? _indicatorPainter;
